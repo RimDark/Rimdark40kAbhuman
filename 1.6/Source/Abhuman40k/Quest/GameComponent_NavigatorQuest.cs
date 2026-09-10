@@ -1,107 +1,43 @@
-using System.Linq;
-using RimWorld;
+using Core40k;
 using Verse;
 
 namespace Abhuman40k;
 
+/// <summary>
+/// Legacy state holder for the downed navigator quest. The quest itself now runs on the
+/// framework's persistent quest registry; this component only carries pre-existing saves over.
+/// </summary>
 public class GameComponent_NavigatorQuest : GameComponent
 {
-    private const int CheckIntervalTicks = 2500;
-    private const int DefaultRetryDelayDays = 30;
+    public const string NavigatorIncidentDefName = "BEWH_NavigatorDowned";
 
     private bool navigatorSecured;
     private int nextEarliestFireTick = -1;
     private int trackedQuestId = -1;
+    private bool migrated;
 
     public GameComponent_NavigatorQuest(Game game)
     {
     }
 
-    public static GameComponent_NavigatorQuest Instance => Current.Game?.GetComponent<GameComponent_NavigatorQuest>();
-
-    public bool NavigatorSecured => navigatorSecured;
-
-    public int NextEarliestFireTick => nextEarliestFireTick;
-
-    public void Notify_NavigatorSecured()
+    public override void FinalizeInit()
     {
-        navigatorSecured = true;
-        trackedQuestId = -1;
-    }
+        base.FinalizeInit();
 
-    public void Notify_QuestOffered()
-    {
-        nextEarliestFireTick = Find.TickManager.TicksGame + RetryDelayTicks;
-    }
-
-    public static bool QuestActive
-    {
-        get
-        {
-            var quests = Find.QuestManager?.QuestsListForReading;
-            if (quests == null)
-            {
-                return false;
-            }
-
-            return quests.Any(quest => quest.root == Abhuman40kDefOf.BEWH_NavigatorDowned
-                                       && quest.State is QuestState.NotYetAccepted or QuestState.Ongoing);
-        }
-    }
-
-    public override void GameComponentTick()
-    {
-        base.GameComponentTick();
-
-        if (navigatorSecured || Find.TickManager.TicksGame % CheckIntervalTicks != 0)
+        if (migrated)
         {
             return;
         }
 
-        var quest = Find.QuestManager?.QuestsListForReading
-            .FirstOrDefault(q => q.root == Abhuman40kDefOf.BEWH_NavigatorDowned
-                                 && q.State is QuestState.NotYetAccepted or QuestState.Ongoing);
+        migrated = true;
 
-        if (quest != null)
-        {
-            if (trackedQuestId != quest.id)
-            {
-                trackedQuestId = quest.id;
-                Notify_QuestOffered();
-            }
-
-            return;
-        }
-
-        if (trackedQuestId < 0)
+        if (!navigatorSecured && nextEarliestFireTick < 0 && trackedQuestId < 0)
         {
             return;
         }
 
-        trackedQuestId = -1;
-        nextEarliestFireTick = Find.TickManager.TicksGame + RetryDelayTicks;
-    }
-
-    private static int RetryDelayTicks
-    {
-        get
-        {
-            var comps = Find.Storyteller?.storytellerComps;
-            if (comps == null)
-            {
-                return DefaultRetryDelayDays * GenDate.TicksPerDay;
-            }
-
-            foreach (var comp in comps)
-            {
-                if (comp.props is StorytellerCompProperties_NavigatorDowned navigatorProps)
-                {
-                    return navigatorProps.retryDelayDays * GenDate.TicksPerDay;
-                }
-            }
-
-            return DefaultRetryDelayDays * GenDate.TicksPerDay;
-        }
+        var occurrences = navigatorSecured || trackedQuestId >= 0 || nextEarliestFireTick > 0 ? 1 : 0;
+        GameComponent_PersistentQuests.SeedState(NavigatorIncidentDefName, navigatorSecured, nextEarliestFireTick, trackedQuestId, occurrences);
     }
 
     public override void ExposeData()
@@ -110,5 +46,6 @@ public class GameComponent_NavigatorQuest : GameComponent
         Scribe_Values.Look(ref navigatorSecured, "navigatorSecured");
         Scribe_Values.Look(ref nextEarliestFireTick, "nextEarliestFireTick", -1);
         Scribe_Values.Look(ref trackedQuestId, "trackedQuestId", -1);
+        Scribe_Values.Look(ref migrated, "migratedToPersistentQuests");
     }
 }

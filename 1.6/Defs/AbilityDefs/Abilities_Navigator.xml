@@ -47,7 +47,7 @@
   <VEF.Abilities.AbilityDef>
     <defName>BEWH_NavigatorWarpTravel</defName>
     <label>course untraveled</label>
-    <description>[Placeholder]The navigator is able to traverse the warp along, however as any warp travel the time it takes may wary wildly</description>
+    <description>The navigator is able to traverse the warp along, however as any warp travel the time it takes may wary wildly.</description>
     <iconPath>UI/Abilities/BEWH_Ability_NavigatorCourseUntraveled</iconPath>
     <abilityClass>Abhuman40k.Ability_WarpEyeWarpTravel</abilityClass>
     <cooldownTime>60000</cooldownTime>

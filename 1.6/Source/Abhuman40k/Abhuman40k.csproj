@@ -109,8 +109,6 @@
     <Compile Include="Quest\GenStep_DeferredAmbush.cs" />
     <Compile Include="Quest\GenStep_DownedNavigator.cs" />
     <Compile Include="Quest\MapComponent_NavigatorRescue.cs" />
-    <Compile Include="Quest\StorytellerCompProperties_NavigatorDowned.cs" />
-    <Compile Include="Quest\StorytellerComp_NavigatorDowned.cs" />
     <Compile Include="Quest\SitePartWorker_DownedNavigator.cs" />
     <Compile Include="Raid\BeastmanSiegeUtility.cs" />
     <Compile Include="Raid\LordJob_Beastman.cs" />

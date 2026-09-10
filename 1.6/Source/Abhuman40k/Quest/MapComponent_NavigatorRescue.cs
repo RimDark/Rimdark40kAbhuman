@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Core40k;
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
@@ -84,7 +85,7 @@ public class MapComponent_NavigatorRescue : MapComponent
 
         if (Secured())
         {
-            GameComponent_NavigatorQuest.Instance?.Notify_NavigatorSecured();
+            GameComponent_PersistentQuests.MarkCompleted(GameComponent_NavigatorQuest.NavigatorIncidentDefName);
             navigator = null;
         }
     }
@@ -104,7 +105,7 @@ public class MapComponent_NavigatorRescue : MapComponent
 
         if (Secured() || leftWithThePlayer)
         {
-            GameComponent_NavigatorQuest.Instance?.Notify_NavigatorSecured();
+            GameComponent_PersistentQuests.MarkCompleted(GameComponent_NavigatorQuest.NavigatorIncidentDefName);
         }
 
         navigator = null;

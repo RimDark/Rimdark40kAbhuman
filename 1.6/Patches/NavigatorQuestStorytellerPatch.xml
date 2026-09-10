@@ -4,10 +4,12 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/StorytellerDef[@Name="BaseStoryteller"]/comps</xpath>
         <value>
-            <li Class="Abhuman40k.StorytellerCompProperties_NavigatorDowned">
-                <fireAfterDaysPassed>50</fireAfterDaysPassed>
-                <retryDelayDays>30</retryDelayDays>
+            <li Class="Core40k.StorytellerCompProperties_PersistentQuest">
                 <incident>BEWH_NavigatorDowned</incident>
+                <minDaysPassed>50</minDaysPassed>
+                <retryDelayDaysRange>25~40</retryDelayDaysRange>
+                <completionMode>Manual</completionMode>
+                <maxOccurrences>-1</maxOccurrences>
                 <skipIfOnExtremeBiome>true</skipIfOnExtremeBiome>
                 <allowedTargetTags>
                     <li>World</li>
