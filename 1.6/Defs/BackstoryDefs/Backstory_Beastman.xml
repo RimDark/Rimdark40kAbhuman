@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
+  <!-- Childhood -->
 
   <BackstoryDef>
     <defName>BEWH_BeastmanChild</defName>
@@ -21,6 +23,104 @@
   </BackstoryDef>
 
   <BackstoryDef>
+    <defName>BEWH_BeastmanChildRunt</defName>
+    <title>herd runt</title>
+    <titleShort>runt</titleShort>
+    <description>Smallest of the litter, [PAWN_nameDef] was kicked away from every kill. [PAWN_pronoun] learned to take food in the dark and to mend the gear the big ones broke.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Crafting>3</Crafting>
+      <Melee>1</Melee>
+      <Social>-2</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Crafting</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanChildHoundWhelp</defName>
+    <title>hound whelp</title>
+    <titleShort>whelp</titleShort>
+    <description>[PAWN_nameDef] was whelped among the herd's war-hounds and fed from the same carcasses. [PAWN_pronoun] understood snarling long before [PAWN_pronoun] understood speech.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Animals>4</Animals>
+      <Melee>1</Melee>
+      <Social>-1</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Animals</li>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanChildStoneDragger</defName>
+    <title>stone dragger</title>
+    <titleShort>dragger</titleShort>
+    <description>Before [PAWN_pronoun] was tall enough to hold a blade, [PAWN_nameDef] hauled tribute rock to the herdstone until [PAWN_possessive] shoulders were raw. The stone hums louder when you stand close to it.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Construction>3</Construction>
+      <Mining>3</Mining>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Constructing</li>
+      <li>Mining</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanChildBrayer</defName>
+    <title>brayer whelp</title>
+    <titleShort>brayer</titleShort>
+    <description>[PAWN_nameDef] spent [PAWN_possessive] youth bellowing the herd's chants at the stone until [PAWN_possessive] throat bled. The shamans taught that the warp listens to the loudest.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>3</Social>
+      <Artistic>2</Artistic>
+      <Melee>1</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Social</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanChildCarcassPicker</defName>
+    <title>carcass picker</title>
+    <titleShort>picker</titleShort>
+    <description>[PAWN_nameDef] grew up on whatever the warherd left behind, boiling marrow from bones the adults had already cracked open.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Cooking>3</Cooking>
+      <Animals>2</Animals>
+      <Medicine>1</Medicine>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Cooking</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <!-- Adulthood -->
+
+  <BackstoryDef>
     <defName>BEWH_BeastmanAdult</defName>
     <title>herdstone beastman</title>
     <titleShort>herdstone beastman</titleShort>
@@ -31,6 +131,124 @@
     </spawnCategories>
     <skillGains>
       <Melee>2</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanAdultRaider</defName>
+    <title>herd raider</title>
+    <titleShort>raider</titleShort>
+    <description>[PAWN_nameDef] ran with the warherd whenever it came down off the high ground, burning steadings and carrying off anything that bled or bellowed.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>3</Melee>
+      <Shooting>2</Shooting>
+      <Social>-3</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanAdultShaman</defName>
+    <title>braying shaman</title>
+    <titleShort>shaman</titleShort>
+    <description>[PAWN_nameDef] tended the herdstone, stacking skulls upon it and braying until the air went thin. The herd feared [PAWN_objective] more than it feared any chieftain.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>4</Social>
+      <Artistic>3</Artistic>
+      <Construction>2</Construction>
+      <Medicine>1</Medicine>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+      <li>Constructing</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanAdultBeastherd</defName>
+    <title>beastherd</title>
+    <titleShort>beastherd</titleShort>
+    <description>[PAWN_nameDef] drove the herd's beasts - hounds, gnawers, and worse things that followed the stone's shadow - and kept them hungry enough to stay useful.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Animals>5</Animals>
+      <Melee>2</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Animals</li>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanAdultChampion</defName>
+    <title>herd champion</title>
+    <titleShort>champion</titleShort>
+    <description>[PAWN_nameDef] won the right to stand nearest the stone the only way that right is ever won, then won it again every time something bigger stepped forward.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>5</Melee>
+      <Social>1</Social>
+      <Medicine>-2</Medicine>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanAdultWreckBreaker</defName>
+    <title>wreck breaker</title>
+    <titleShort>breaker</titleShort>
+    <description>[PAWN_nameDef] broke open hulls and caravan wrecks for the herd, beating the salvage into blades that held an edge better than anything the shamans blessed.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Crafting>4</Crafting>
+      <Mining>3</Mining>
+      <Construction>2</Construction>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Crafting</li>
+      <li>Mining</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_BeastmanAdultHerdless</defName>
+    <title>herdless</title>
+    <titleShort>herdless</titleShort>
+    <description>Driven off by a bigger rival, [PAWN_nameDef] spent years beyond the braying, far enough from any herdstone to hear [PAWN_possessive] own thoughts. [PAWN_pronoun] has not forgiven the herd for it.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>BEWH_BeastmanBackstoryPlayer</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>2</Melee>
+      <Plants>2</Plants>
+      <Crafting>2</Crafting>
+      <Social>-4</Social>
     </skillGains>
     <requiredWorkTags>
       <li>Violent</li>

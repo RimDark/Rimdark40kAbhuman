@@ -19,9 +19,20 @@
         </requiredWorkTags>
         <fixedChildBackstories>
             <li>BEWH_BeastmanChild</li>
+            <li>BEWH_BeastmanChildRunt</li>
+            <li>BEWH_BeastmanChildHoundWhelp</li>
+            <li>BEWH_BeastmanChildStoneDragger</li>
+            <li>BEWH_BeastmanChildBrayer</li>
+            <li>BEWH_BeastmanChildCarcassPicker</li>
         </fixedChildBackstories>
         <fixedAdultBackstories>
             <li>BEWH_BeastmanAdult</li>
+            <li>BEWH_BeastmanAdultRaider</li>
+            <li>BEWH_BeastmanAdultShaman</li>
+            <li>BEWH_BeastmanAdultBeastherd</li>
+            <li>BEWH_BeastmanAdultChampion</li>
+            <li>BEWH_BeastmanAdultWreckBreaker</li>
+            <li>BEWH_BeastmanAdultHerdless</li>
         </fixedAdultBackstories>
         <skills>
             <li>
