@@ -36,7 +36,7 @@
         <statOffsets>
             <HuntingStealth>0.35</HuntingStealth>
             <MeleeDodgeChance>3</MeleeDodgeChance>
-            <VEF_BodySize_Offset>-0.25</VEF_BodySize_Offset>
+            <VEF_BodySize_Offset>-0.35</VEF_BodySize_Offset>
         </statOffsets>
         <customEffectDescriptions>
             <li>Decreased Size</li>

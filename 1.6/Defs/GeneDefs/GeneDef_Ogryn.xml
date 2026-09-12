@@ -21,7 +21,7 @@
             <MeleeDamageFactor>1.95</MeleeDamageFactor>
         </statFactors>
         <statOffsets>
-            <VEF_BodySize_Offset>0.35</VEF_BodySize_Offset>
+            <VEF_BodySize_Offset>0.4</VEF_BodySize_Offset>
             <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</SuppressionPower>
             <StaggerDurationFactor>-0.2</StaggerDurationFactor>
             <CarryingCapacity>100</CarryingCapacity>
