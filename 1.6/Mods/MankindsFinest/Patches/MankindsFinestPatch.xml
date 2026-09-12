@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/FactionDef[defName="BEWH_ImperiumFaction"]/xenotypeSet/xenotypeChances</xpath>
+        <value>
+            <BEWH_Ratling>0.15</BEWH_Ratling>
+            <BEWH_Ogryn>0.15</BEWH_Ogryn>
+            <BEWH_Felinid>0.04</BEWH_Felinid>
+            <BEWH_Navigator>0.01</BEWH_Navigator>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AbilityDef[defName="BEWH_NavigatorExposeWarpEye"]/comps/li[@Class="Abhuman40k.CompProperties_AbilityWarpEyeGaze"]/stunnedNotKilledGeneDef</xpath>
+        <value>
+            <li>BEWH_TempestusOcularium</li>
+            <li>BEWH_MnemosyneMindshield</li>
+            <li>BEWH_SigmaPariah</li>
+            <li>BEWH_UpsilonPariah</li>
+            <li>BEWH_OmegaPariah</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AbilityDef[defName="BEWH_NavigatorExposeWarpEye"]/comps/li[@Class="Abhuman40k.CompProperties_AbilityWarpEyeGaze"]/stunnedNotKilledPawnKindDef</xpath>
+        <value>
+            <li>BEWH_CustodesPawn</li>
+            <li>BEWH_LordCommanderPawn</li>
+        </value>
+    </Operation>
+
+</Patch>

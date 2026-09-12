@@ -3,6 +3,7 @@
 	<v1.6>
 		<li>/</li>
 		<li>1.6</li>
+		<li IfModActive="Phonicmas.RimDark.MankindsFinest">1.6/Mods/MankindsFinest</li>
 	</v1.6>
 
 </loadFolders>

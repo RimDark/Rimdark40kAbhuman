@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Childhood -->
+
+  <BackstoryDef>
+    <defName>BEWH_NavigatorChildBowerBorn</defName>
+    <title>bower born</title>
+    <titleShort>bower born</titleShort>
+    <description>[PAWN_nameDef] was raised in the sealed bower of [PAWN_possessive] house, tutored by servants who never once met [PAWN_possessive] eyes. [PAWN_pronoun] could read a tide-chart before [PAWN_pronoun] could walk, and had never seen an open sky.</description>
+    <slot>Childhood</slot>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+    <spawnCategories>
+      <li>BEWH_NavigatorBackstory</li>
+    </spawnCategories>
+    <skillGains>
+      <Intellectual>4</Intellectual>
+      <Artistic>2</Artistic>
+      <Social>-1</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_NavigatorChildEyeOpened</defName>
+    <title>veiled scion</title>
+    <titleShort>veiled</titleShort>
+    <description>The third eye opened on [PAWN_nameDef] years before the house thought [PAWN_objective] ready. [PAWN_pronoun] spent the rest of childhood behind a weighted blindfold, learning to endure what [PAWN_pronoun] could not stop seeing.</description>
+    <slot>Childhood</slot>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+    <spawnCategories>
+      <li>BEWH_NavigatorBackstory</li>
+    </spawnCategories>
+    <skillGains>
+      <Intellectual>3</Intellectual>
+      <Medicine>2</Medicine>
+      <Social>-2</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_NavigatorChildHouseWard</defName>
+    <title>house ward</title>
+    <titleShort>ward</titleShort>
+    <description>[PAWN_nameDef] was handed to a rival house as a living seal on a pact, and raised in their halls as an honoured hostage. [PAWN_pronoun] learned which smiles meant a knife long before [PAWN_pronoun] learned the warp tides.</description>
+    <slot>Childhood</slot>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+    <spawnCategories>
+      <li>BEWH_NavigatorBackstory</li>
+    </spawnCategories>
+    <skillGains>
+      <Social>5</Social>
+      <Intellectual>2</Intellectual>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Social</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_NavigatorChildVoidCradled</defName>
+    <title>void cradled</title>
+    <titleShort>void cradled</titleShort>
+    <description>Born aboard a vessel already underway, [PAWN_nameDef] took [PAWN_possessive] first breath of recycled air. The empyrean through the oculus came before [PAWN_possessive] mother's face, and solid ground came years after both.</description>
+    <slot>Childhood</slot>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+    <spawnCategories>
+      <li>BEWH_NavigatorBackstory</li>
+    </spawnCategories>
+    <skillGains>
+      <Intellectual>3</Intellectual>
+      <Crafting>3</Crafting>
+      <Plants>-2</Plants>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Crafting</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_NavigatorChildPaleScion</defName>
+    <title>pale scion</title>
+    <titleShort>scion</titleShort>
+    <description>Sickly even by the standards of [PAWN_possessive] line, [PAWN_nameDef] spent childhood in the house medicae being measured. [PAWN_pronoun] learned [PAWN_possessive] own anatomy from physicians arguing over how long [PAWN_pronoun] would last.</description>
+    <slot>Childhood</slot>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+    <spawnCategories>
+      <li>BEWH_NavigatorBackstory</li>
+    </spawnCategories>
+    <skillGains>
+      <Medicine>5</Medicine>
+      <Intellectual>2</Intellectual>
+      <Melee>-2</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Caring</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <!-- Adulthood -->
+
+  <BackstoryDef>
+    <defName>BEWH_NavigatorAdultShipsNavigator</defName>
+    <title>ship's navigator</title>
+    <titleShort>navigator</titleShort>
+    <description>[PAWN_nameDef] served decades in the bower of a single vessel, guiding her by a light the crew below only prayed to. [PAWN_pronoun] knows that hull better than any face aboard it.</description>
+    <slot>Adulthood</slot>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+    <spawnCategories>
+      <li>BEWH_NavigatorBackstory</li>
+    </spawnCategories>
+    <skillGains>
+      <Intellectual>6</Intellectual>
+      <Social>-2</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_NavigatorAdultCharterSworn</defName>
+    <title>charter-sworn</title>
+    <titleShort>charter-sworn</titleShort>
+    <description>[PAWN_nameDef] signed onto a rogue trader's warrant and spent [PAWN_possessive] adulthood past the edge of the charted lanes, plotting courses no house archive had a name for. The pay was obscene. The odds were worse.</description>
+    <slot>Adulthood</slot>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+    <spawnCategories>
+      <li>BEWH_NavigatorBackstory</li>
+    </spawnCategories>
+    <skillGains>
+      <Intellectual>4</Intellectual>
+      <Social>4</Social>
+      <Shooting>2</Shooting>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Social</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_NavigatorAdultFleetNavigator</defName>
+    <title>fleet navigator</title>
+    <titleShort>fleet</titleShort>
+    <description>Seconded to a battlefleet, [PAWN_nameDef] learned to plot a translation with the gun decks hammering underfoot. Admirals shouted at [PAWN_objective] like any other officer, which no house bower had prepared [PAWN_objective] for.</description>
+    <slot>Adulthood</slot>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+    <spawnCategories>
+      <li>BEWH_NavigatorBackstory</li>
+    </spawnCategories>
+    <skillGains>
+      <Intellectual>4</Intellectual>
+      <Shooting>4</Shooting>
+      <Melee>1</Melee>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_NavigatorAdultWarpCartographer</defName>
+    <title>warp cartographer</title>
+    <titleShort>cartographer</titleShort>
+    <description>[PAWN_nameDef] charted the shifting tides for a living, illuminating route-maps that sold for more than the ships which used them. A good chart is a house's true wealth, and [PAWN_pronoun] drew [PAWN_possessive] own.</description>
+    <slot>Adulthood</slot>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+    <spawnCategories>
+      <li>BEWH_NavigatorBackstory</li>
+    </spawnCategories>
+    <skillGains>
+      <Intellectual>6</Intellectual>
+      <Artistic>4</Artistic>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Artistic</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>BEWH_NavigatorAdultBlackShipPilot</defName>
+    <title>black ship navigator</title>
+    <titleShort>black ship</titleShort>
+    <description>[PAWN_nameDef] steered the psyker tithe to Terra, hold after hold of it, year after year. The cargo was audible for the whole passage. [PAWN_pronoun] does not discuss the work.</description>
+    <slot>Adulthood</slot>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+    <spawnCategories>
+      <li>BEWH_NavigatorBackstory</li>
+    </spawnCategories>
+    <skillGains>
+      <Intellectual>5</Intellectual>
+      <Medicine>2</Medicine>
+      <Social>-4</Social>
+    </skillGains>
+    <requiredWorkTags>
+      <li>Intellectual</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+</Defs>
