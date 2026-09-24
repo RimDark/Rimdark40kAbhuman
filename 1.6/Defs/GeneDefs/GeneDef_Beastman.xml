@@ -34,6 +34,7 @@
             <li>Fur</li>
             <li>BeardStyle</li>
             <li>Physique</li>
+            <li>Ears</li>
         </exclusionTags>
         <statOffsets>
             <ComfyTemperatureMin>-15</ComfyTemperatureMin>
@@ -285,6 +286,7 @@
             <li>HairStyle</li>
             <li>Fur</li>
             <li>BeardStyle</li>
+            <li>Ears</li>
         </exclusionTags>
         <statOffsets>
             <ComfyTemperatureMin>-15</ComfyTemperatureMin>
