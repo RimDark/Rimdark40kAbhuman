@@ -35,7 +35,7 @@
     <BEWH.Abhuman.Navigator.WillBeStunned>Will stun</BEWH.Abhuman.Navigator.WillBeStunned>
     <BEWH.Abhuman.Navigator.WillBeKilled>Will kill</BEWH.Abhuman.Navigator.WillBeKilled>
     <BEWH.Abhuman.Navigator.WarpTravelLetter>Warp Travel Concluded</BEWH.Abhuman.Navigator.WarpTravelLetter>
-    <BEWH.Abhuman.Navigator.WarpTravelMessage>After spending {1} traveling in the warp, navigator {0} has successfully teleported {2} to their desired location.</BEWH.Abhuman.Navigator.WarpTravelMessage>
+    <BEWH.Abhuman.Navigator.WarpTravelMessage>After spending {1} traveling in the Warp, navigator {0} has successfully teleported {2} to their desired location.</BEWH.Abhuman.Navigator.WarpTravelMessage>
     <BEWH.Abhuman.Navigator.TravelTimeRemaining>Time remaining between {0}~{1}</BEWH.Abhuman.Navigator.TravelTimeRemaining>
     <BEWH.Abhuman.Navigator.TravelTimeRemainingExact>Time remaining: {0}</BEWH.Abhuman.Navigator.TravelTimeRemainingExact>
     <BEWH.Abhuman.Navigator.WarpTravelOverCapacity>{0} can only hold {1} within their gaze. {2} left behind.</BEWH.Abhuman.Navigator.WarpTravelOverCapacity>
