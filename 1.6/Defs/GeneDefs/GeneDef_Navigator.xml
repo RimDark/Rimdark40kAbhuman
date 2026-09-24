@@ -11,14 +11,6 @@
         <biostatCpx>4</biostatCpx>
         <biostatMet>-3</biostatMet>
         <displayOrderInCategory>61</displayOrderInCategory>
-        <forcedHeadTypes>
-            <li>Male_AverageNormal</li>
-            <li>Male_AveragePointy</li>
-            <li>Male_AverageWide</li>
-            <li>Female_AverageNormal</li>
-            <li>Female_AveragePointy</li>
-			<li>Female_AverageWide</li>
-        </forcedHeadTypes>
         <exclusionTags>
             <li>Psyker</li>
             <li>Pariah</li>
@@ -58,7 +50,9 @@
             <li>
                 <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
                 <workerClass>Core40k.PawnRenderNodeWorker_HeadCovered</workerClass>
-                <texPath>Things/Pawn/Humanlike/Navigator/HeadAttachments/WarpEye/BEWH_WarpEye</texPath>
+                <texPath>Things/Pawn/Humanlike/Navigator/HeadAttachments/BEWH_Male_WarpEye</texPath>
+                <texPathFemale>Things/Pawn/Humanlike/Navigator/HeadAttachments/BEWH_Female_WarpEye</texPathFemale>
+                <drawSize>0.5</drawSize>
                 <parentTagDef>Head</parentTagDef>
                 <visibleFacing>
                     <li>East</li>
@@ -69,12 +63,6 @@
                     <defaultData>
                         <layer>60</layer>
                     </defaultData>
-                    <dataEast>
-                        <offset>(-0.012, 0, 0)</offset>
-                    </dataEast>
-                    <dataWest>
-                        <offset>(0.012, 0, 0)</offset>
-                    </dataWest>
                 </drawData>
             </li>
         </renderNodeProperties>
@@ -122,6 +110,10 @@
         <biostatCpx>1</biostatCpx>
         <biostatMet>1</biostatMet>
         <displayOrderInCategory>63</displayOrderInCategory>
+        <forcedHeadTypes>
+            <li>BEWH_NavigatorHeadM</li>
+            <li>BEWH_NavigatorHeadF</li>
+        </forcedHeadTypes>
 
         <customEffectDescriptions>
             <li>Other pawns have decreased opinion of this pawn</li>
