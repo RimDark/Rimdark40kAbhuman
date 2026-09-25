@@ -7,7 +7,7 @@
     <defName>BEWH_BeastmanChild</defName>
     <title>herdstone born</title>
     <titleShort>herdstone born</titleShort>
-    <description>Child of the herdstone, [PAWN_nameDef] was somehow concieved through the warp and had to get by in an unforgivable place.</description>
+    <description>Child of the herdstone, [PAWN_nameDef] was somehow conceived through the Warp and had to get by in an unforgiving place.</description>
     <slot>Childhood</slot>
     <spawnCategories>
       <li>BEWH_BeastmanBackstoryPlayer</li>
@@ -65,7 +65,7 @@
     <defName>BEWH_BeastmanChildStoneDragger</defName>
     <title>stone dragger</title>
     <titleShort>dragger</titleShort>
-    <description>Before [PAWN_pronoun] was tall enough to hold a blade, [PAWN_nameDef] hauled tribute rock to the herdstone until [PAWN_possessive] shoulders were raw. The stone hums louder when you stand close to it.</description>
+    <description>Before [PAWN_pronoun] was tall enough to hold a blade, [PAWN_nameDef] hauled tribute rock to the herdstone until [PAWN_possessive] shoulders were raw. The stone hums louder when one stands close to it.</description>
     <slot>Childhood</slot>
     <spawnCategories>
       <li>BEWH_BeastmanBackstoryPlayer</li>
@@ -84,7 +84,7 @@
     <defName>BEWH_BeastmanChildBrayer</defName>
     <title>brayer whelp</title>
     <titleShort>brayer</titleShort>
-    <description>[PAWN_nameDef] spent [PAWN_possessive] youth bellowing the herd's chants at the stone until [PAWN_possessive] throat bled. The shamans taught that the warp listens to the loudest.</description>
+    <description>[PAWN_nameDef] spent [PAWN_possessive] youth bellowing the herd's chants at the stone until [PAWN_possessive] throat bled. The shamans taught that the Warp listens to the loudest.</description>
     <slot>Childhood</slot>
     <spawnCategories>
       <li>BEWH_BeastmanBackstoryPlayer</li>
@@ -122,9 +122,9 @@
 
   <BackstoryDef>
     <defName>BEWH_BeastmanAdult</defName>
-    <title>herdstone beastman</title>
-    <titleShort>herdstone beastman</titleShort>
-    <description>[PAWN_nameDef] mature quickly in the warp, learning how to slaughter and nothing else.</description>
+    <title>herdstone Beastman</title>
+    <titleShort>herdstone Beastman</titleShort>
+    <description>[PAWN_nameDef] matured quickly in the Warp, learning how to slaughter and nothing else.</description>
     <slot>Adulthood</slot>
     <spawnCategories>
       <li>BEWH_BeastmanBackstoryPlayer</li>

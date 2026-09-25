@@ -9,7 +9,7 @@
     <thingClass>Abhuman40k.Building_CriticalReactor</thingClass>
 
     <graphicData>
-      <texPath>Things/Building/Misc/GroundPenetratingScanner</texPath>
+      <texPath>Things/Building/BEWH_NavigatorGravcore_On</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3, 3)</drawSize>
       <shadowData>
@@ -44,7 +44,7 @@
         <ticksToExplode>10000</ticksToExplode>
 
         <unstableGraphicData>
-          <texPath>Things/Building/Exotic/CrashedShipPart</texPath>
+          <texPath>Things/Building/BEWH_NavigatorGravcore_Unstable</texPath>
           <graphicClass>Graphic_Single</graphicClass>
           <drawSize>(3, 3)</drawSize>
         </unstableGraphicData>

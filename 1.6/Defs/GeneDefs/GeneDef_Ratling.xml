@@ -43,6 +43,7 @@
         </customEffectDescriptions>
         <exclusionTags>
             <li>Physique</li>
+            <li>Ears</li>
         </exclusionTags>
     </GeneDef>
 

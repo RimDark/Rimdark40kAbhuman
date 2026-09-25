@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_NavigatorHeadM</defName>
+        <graphicPath>Things/Pawn/Humanlike/Navigator/Heads/BEWH_Male_NavigatorHead</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Male</gender>
+        <requiredGenes>
+            <li>BEWH_NavigtorUnsettlingPresence</li>
+        </requiredGenes>
+        <selectionWeight>1000</selectionWeight>
+    </HeadTypeDef>
+
+
+	<HeadTypeDef ParentName="AverageBase">
+        <defName>BEWH_NavigatorHeadF</defName>
+        <graphicPath>Things/Pawn/Humanlike/Navigator/Heads/BEWH_Female_NavigatorHead</graphicPath>
+        <randomChosen>false</randomChosen>
+        <gender>Female</gender>
+        <requiredGenes>
+            <li>BEWH_NavigtorUnsettlingPresence</li>
+        </requiredGenes>
+        <selectionWeight>1000</selectionWeight>
+    </HeadTypeDef>
+
+</Defs>
