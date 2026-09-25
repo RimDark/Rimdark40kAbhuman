@@ -18,6 +18,8 @@ public class Ability_WarpEyeWarpTravel : VEF.Abilities.Ability
 
     private const int MinTravelDurationTicks = 300;
 
+    private const float TravelDurationWeightExponent = 2f;
+
     private int Capacity => Mathf.Max(1, Mathf.RoundToInt(CasterPawn.GetStatValue(Abhuman40kDefOf.BEWH_WarpTravelCapacity)));
 
     private int previewFrame = -1;
@@ -117,7 +119,7 @@ public class Ability_WarpEyeWarpTravel : VEF.Abilities.Ability
         var instability = Mathf.Max(0f, CasterPawn.GetStatValue(Abhuman40kDefOf.BEWH_WarpTravelInstability));
 
         var spread = BaseInstabilitySpreadTicks * instability;
-        var duration = Mathf.RoundToInt(Mathf.Max(MinTravelDurationTicks, travelDurationRange.RandomInRange * durationFactor + Rand.Range(-spread, spread)));
+        var duration = Mathf.RoundToInt(Mathf.Max(MinTravelDurationTicks, RollWeightedDuration() * durationFactor + Rand.Range(-spread, spread)));
 
         var warpTravel = Abhuman40kUtils.MakeWarpTravelObject(travelingPawns, targets[0].Tile, duration, false);
         warpTravel.estimateSpreadTicks = Mathf.RoundToInt(spread);
@@ -131,6 +133,8 @@ public class Ability_WarpEyeWarpTravel : VEF.Abilities.Ability
             }
         }
 
+        SendDepartureMessage(warpTravel, travelingPawns.Count > 1);
+
         if (leftBehind.Any())
         {
             Messages.Message("BEWH.Abhuman.Navigator.WarpTravelOverCapacity".Translate(CasterPawn.Named("PAWN"), Capacity, leftBehind.Count), CasterPawn, MessageTypeDefOf.CautionInput, historical: false);
@@ -142,6 +146,29 @@ public class Ability_WarpEyeWarpTravel : VEF.Abilities.Ability
             caravan.RemoveAllPawns();
             caravan.Destroy();
         }
+    }
+
+    /// <summary>
+    /// Rolls a base duration within travelDurationRange, weighted towards the shorter end.
+    /// </summary>
+    private float RollWeightedDuration()
+    {
+        return Mathf.Lerp(travelDurationRange.min, travelDurationRange.max, Mathf.Pow(Rand.Value, TravelDurationWeightExponent));
+    }
+
+    /// <summary>
+    /// Announces the departure along with the navigator's estimate of how long the passage will take.
+    /// </summary>
+    private void SendDepartureMessage(WarpTravelWorldObject warpTravel, bool hasCompanions)
+    {
+        var departure = (hasCompanions ? "BEWH.Abhuman.Navigator.WarpTravelDepartedWithCompanions" : "BEWH.Abhuman.Navigator.WarpTravelDepartedAlone").Translate(CasterPawn.Named("PAWN"));
+
+        warpTravel.GetArrivalEstimate(out var lowerEstimate, out var higherEstimate);
+        var estimate = lowerEstimate == higherEstimate
+            ? "BEWH.Abhuman.Navigator.WarpTravelDepartedEstimateExact".Translate(lowerEstimate.ToStringTicksToPeriod())
+            : "BEWH.Abhuman.Navigator.WarpTravelDepartedEstimate".Translate(lowerEstimate.ToStringTicksToPeriod(), higherEstimate.ToStringTicksToPeriod());
+
+        Messages.Message(departure + " " + estimate, MessageTypeDefOf.NeutralEvent, historical: true);
     }
 
     public override void GizmoUpdateOnMouseover()

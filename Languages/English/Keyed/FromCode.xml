@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
     <BEWH.Abhuman.ModSettings.ModName>RimDark 40k - Abhumans - {0}</BEWH.Abhuman.ModSettings.ModName>
@@ -33,11 +33,17 @@
 
     <!-- Navigator -->
     <BEWH.Abhuman.Navigator.WillBeStunned>Will stun</BEWH.Abhuman.Navigator.WillBeStunned>
+    <BEWH.Abhuman.Navigator.WillBeHeld>Will hold</BEWH.Abhuman.Navigator.WillBeHeld>
+    <BEWH.Abhuman.Navigator.HeldInGazeDeaf>{PAWN_labelShort} is psychically deaf and cannot be held.</BEWH.Abhuman.Navigator.HeldInGazeDeaf>
     <BEWH.Abhuman.Navigator.WillBeKilled>Will kill</BEWH.Abhuman.Navigator.WillBeKilled>
     <BEWH.Abhuman.Navigator.WarpTravelLetter>Warp Travel Concluded</BEWH.Abhuman.Navigator.WarpTravelLetter>
     <BEWH.Abhuman.Navigator.WarpTravelMessage>After spending {1} traveling in the warp, navigator {0} has successfully teleported {2} to their desired location.</BEWH.Abhuman.Navigator.WarpTravelMessage>
     <BEWH.Abhuman.Navigator.TravelTimeRemaining>Time remaining between {0}~{1}</BEWH.Abhuman.Navigator.TravelTimeRemaining>
     <BEWH.Abhuman.Navigator.TravelTimeRemainingExact>Time remaining: {0}</BEWH.Abhuman.Navigator.TravelTimeRemainingExact>
+    <BEWH.Abhuman.Navigator.WarpTravelDepartedWithCompanions>{PAWN_labelShort} and their companions have vanished from the material realm to make a warp jump.</BEWH.Abhuman.Navigator.WarpTravelDepartedWithCompanions>
+    <BEWH.Abhuman.Navigator.WarpTravelDepartedAlone>{PAWN_labelShort} has vanished from the material realm to make a warp jump.</BEWH.Abhuman.Navigator.WarpTravelDepartedAlone>
+    <BEWH.Abhuman.Navigator.WarpTravelDepartedEstimate>This journey could take anywhere from {0} to {1}.</BEWH.Abhuman.Navigator.WarpTravelDepartedEstimate>
+    <BEWH.Abhuman.Navigator.WarpTravelDepartedEstimateExact>This journey will take {0}.</BEWH.Abhuman.Navigator.WarpTravelDepartedEstimateExact>
     <BEWH.Abhuman.Navigator.WarpTravelOverCapacity>{0} can only hold {1} within their gaze. {2} left behind.</BEWH.Abhuman.Navigator.WarpTravelOverCapacity>
 
     <!-- Felinid -->

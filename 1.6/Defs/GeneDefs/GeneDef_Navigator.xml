@@ -35,9 +35,11 @@
         </capMods>
         <abilities>
             <li>BEWH_NavigatorExposeWarpEye</li>
+            <li>BEWH_NavigatorHeldInGaze</li>
         </abilities>
         <descriptionHyperlinks>
             <AbilityDef>BEWH_NavigatorExposeWarpEye</AbilityDef>
+            <AbilityDef>BEWH_NavigatorHeldInGaze</AbilityDef>
         </descriptionHyperlinks>
         <customEffectDescriptions>
             <li>Reveals psychically concealed creatures within 12.9 tiles, so long as the warp eye is uncovered.</li>

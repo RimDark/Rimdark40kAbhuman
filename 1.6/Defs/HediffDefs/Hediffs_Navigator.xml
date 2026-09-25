@@ -20,4 +20,88 @@
         </stages>
     </HediffDef>
 
+    <HediffDef>
+        <defName>BEWH_NavigatorGazeStrain</defName>
+        <label>gaze strain</label>
+        <description>The mental toll of pinning another being in place with the warp eye. It fades once the Navigator lets go, but holding on too long will leave them senseless.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(0.7, 0.5, 0.9)</defaultLabelColor>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <isBad>true</isBad>
+        <initialSeverity>0.001</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-3</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>strained</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.05</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.25</minSeverity>
+                <label>straining</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.5</minSeverity>
+                <label>overtaxed</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.30</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.75</minSeverity>
+                <label>failing</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.45</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>1</minSeverity>
+                <label>lost in the gaze</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BEWH_HeldInGaze</defName>
+        <label>held in gaze</label>
+        <description>This creature is pinned in place by a Navigator's warp eye and can neither move nor act until the gaze breaks.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(0.7, 0.5, 0.9)</defaultLabelColor>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <isBad>true</isBad>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>90</disappearsAfterTicks>
+                <showRemainingTime>false</showRemainingTime>
+            </li>
+        </comps>
+    </HediffDef>
+
 </Defs>

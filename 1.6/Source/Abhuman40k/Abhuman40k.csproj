@@ -83,6 +83,8 @@
     <Compile Include="Buildings\Building_CriticalReactor.cs" />
     <Compile Include="Buildings\MapComponent_HerdstoneNetwork.cs" />
     <Compile Include="Comps\CompAbilityEffect_GiveBodyguardHediff.cs" />
+    <Compile Include="Comps\CompAbilityEffect_HeldInGaze.cs" />
+    <Compile Include="Comps\CompProperties_AbilityHeldInGaze.cs" />
     <Compile Include="Comps\CompAbilityEffect_WarpEyeGaze.cs" />
     <Compile Include="Comps\CompCustomCauseHediff_Extra_AoE.cs" />
     <Compile Include="Comps\CompProperties_AbilityGiveBodyguardHediff.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Workers\InteractionWorker_FelinidNuzzle.cs" />
     <Compile Include="Workers\JobDriver_FelinidNuzzle.cs" />
     <Compile Include="Workers\JobDriver_HerdstonePray.cs" />
+    <Compile Include="Workers\JobDriver_HoldInGaze.cs" />
     <Compile Include="Workers\JobDriver_SummonMinotaur.cs" />
     <Compile Include="Workers\JobGiver_FelinidNuzzle.cs" />
     <Compile Include="Workers\JobGiver_HerdstonePray.cs" />

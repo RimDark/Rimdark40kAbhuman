@@ -43,6 +43,52 @@
     </comps>
   </AbilityDef>
 
+  <!-- Held In My Gaze -->
+  <AbilityDef>
+    <defName>BEWH_NavigatorHeldInGaze</defName>
+    <label>held in my gaze</label>
+    <description>The Navigator fixes a victim with the warp eye and refuses to let go. So long as the Navigator stands still and keeps their gaze, the victim can neither move nor strike. The effort drains the Navigator's mind, and larger victims are harder to hold. If the Navigator holds on too long, they will collapse.</description>
+    <iconPath>UI/Abilities/BEWH_Ability_NavigatorPiercingGaze</iconPath>
+    <cooldownTicksRange>2500</cooldownTicksRange>
+    <waitForJobEnd>true</waitForJobEnd>
+    <jobDef>BEWH_HoldInGaze</jobDef>
+    <aiCanUse>false</aiCanUse>
+    <category>BEWH_Navigator</category>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>10.9</range>
+      <warmupTime>0.5</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Abhuman40k.CompProperties_AbilityHeldInGaze">
+        <strainHediff>BEWH_NavigatorGazeStrain</strainHediff>
+        <heldHediff>BEWH_HeldInGaze</heldHediff>
+        <strainPerTick>0.0006</strainPerTick>
+        <bodySizeFactorRange>0.5~3</bodySizeFactorRange>
+        <stunPulseTicks>30</stunPulseTicks>
+        <checkIntervalTicks>60</checkIntervalTicks>
+        <requiresLineOfSight>true</requiresLineOfSight>
+        <blockedIfCovered>
+          <li>UpperHead</li>
+          <li>FullHead</li>
+        </blockedIfCovered>
+      </li>
+      <li Class="Core40k.CompProperties_DisableIfApparelCovers">
+        <disabledIfCovered>
+          <li>UpperHead</li>
+          <li>FullHead</li>
+        </disabledIfCovered>
+      </li>
+    </comps>
+  </AbilityDef>
+
   <!-- Warp Travel -->
   <VEF.Abilities.AbilityDef>
     <defName>BEWH_NavigatorWarpTravel</defName>

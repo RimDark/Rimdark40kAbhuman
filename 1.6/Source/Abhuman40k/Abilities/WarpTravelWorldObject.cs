@@ -67,22 +67,36 @@ public class WarpTravelWorldObject : WorldObject, IThingHolder
         {
             stringBuilder.AppendLine();
         }
-        var remaining = Mathf.Max(0, arrivalTick - Find.TickManager.TicksGame);
+        GetArrivalEstimate(out var lowerEstimate, out var higherEstimate);
 
         if (estimateSpreadTicks <= 0)
         {
-            stringBuilder.Append("BEWH.Abhuman.Navigator.TravelTimeRemainingExact".Translate(remaining.ToStringTicksToPeriod()));
+            stringBuilder.Append("BEWH.Abhuman.Navigator.TravelTimeRemainingExact".Translate(lowerEstimate.ToStringTicksToPeriod()));
             return stringBuilder.ToString();
         }
-
-        var centre = remaining + estimateOffsetTicks;
-        var lowerEstimate = Mathf.Max(0, centre - estimateSpreadTicks);
-        var higherEstimate = Mathf.Max(lowerEstimate, centre + estimateSpreadTicks);
 
         stringBuilder.Append("BEWH.Abhuman.Navigator.TravelTimeRemaining".Translate(lowerEstimate.ToStringTicksToPeriod(), higherEstimate.ToStringTicksToPeriod()));
         return stringBuilder.ToString();
     }
     
+    /// <summary>
+    /// The navigator's estimated window, in ticks from now, for when the passage ends. Both values are equal when the estimate is exact.
+    /// </summary>
+    public void GetArrivalEstimate(out int lowerEstimate, out int higherEstimate)
+    {
+        var remaining = Mathf.Max(0, arrivalTick - Find.TickManager.TicksGame);
+        if (estimateSpreadTicks <= 0)
+        {
+            lowerEstimate = remaining;
+            higherEstimate = remaining;
+            return;
+        }
+
+        var centre = remaining + estimateOffsetTicks;
+        lowerEstimate = Mathf.Max(0, centre - estimateSpreadTicks);
+        higherEstimate = Mathf.Max(lowerEstimate, centre + estimateSpreadTicks);
+    }
+
     public override void ExposeData()
     {
         base.ExposeData();

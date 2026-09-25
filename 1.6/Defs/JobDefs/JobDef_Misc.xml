@@ -25,4 +25,13 @@
         <casualInterruptible>false</casualInterruptible>
     </JobDef>
 
+    <JobDef>
+        <defName>BEWH_HoldInGaze</defName>
+        <driverClass>Abhuman40k.JobDriver_HoldInGaze</driverClass>
+        <reportString>holding TargetA in their gaze.</reportString>
+        <casualInterruptible>false</casualInterruptible>
+        <suspendable>false</suspendable>
+        <collideWithPawns>true</collideWithPawns>
+    </JobDef>
+
 </Defs>
