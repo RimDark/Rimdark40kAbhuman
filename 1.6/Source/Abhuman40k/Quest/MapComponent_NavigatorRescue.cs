@@ -62,7 +62,17 @@ public class MapComponent_NavigatorRescue : MapComponent
     {
         base.MapComponentTick();
 
-        if (navigator == null || Find.TickManager.TicksGame % PollIntervalTicks != 0)
+        if (Find.TickManager.TicksGame % PollIntervalTicks != 0)
+        {
+            return;
+        }
+
+        if (turretsAwake)
+        {
+            SustainTurrets();
+        }
+
+        if (navigator == null)
         {
             return;
         }
@@ -177,6 +187,32 @@ public class MapComponent_NavigatorRescue : MapComponent
             }
 
             building.TryGetComp<CompPowerBattery>()?.SetStoredEnergyPct(1f);
+        }
+
+        SustainTurrets();
+    }
+
+    /// <summary>
+    /// Keeps the awakened ship turrets firing even when the wreck's grid can no longer feed them.
+    /// Their draw is dropped to zero so the power net never picks them for a shutdown.
+    /// </summary>
+    private void SustainTurrets()
+    {
+        for (var i = 0; i < shipTurrets.Count; i++)
+        {
+            if (shipTurrets[i] is not ThingWithComps turret || !turret.Spawned || turret.Faction != Faction.OfMechanoids)
+            {
+                continue;
+            }
+
+            var power = turret.TryGetComp<CompPowerTrader>();
+            if (power == null || power.PowerOn || !FlickUtility.WantsToBeOn(turret) || turret.IsBrokenDown())
+            {
+                continue;
+            }
+
+            power.PowerOutput = 0f;
+            power.PowerOn = true;
         }
     }
 

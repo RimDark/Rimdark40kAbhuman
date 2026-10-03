@@ -66,5 +66,6 @@
     <BEWH.Abhuman.Reactor.DetonationLetterText>The wounded grav-engine has torn itself apart. Everything short of the most resilient construction within the blast has been levelled.</BEWH.Abhuman.Reactor.DetonationLetterText>
     <BEWH.Abhuman.Reactor.SalvagersLetterLabel>Salvagers inbound</BEWH.Abhuman.Reactor.SalvagersLetterLabel>
     <BEWH.Abhuman.Reactor.SalvagersLetterText>The gravship's death throes have not gone unnoticed. A band from {0} is closing on the wreck, and they are here for whatever they can strip out of it before it goes up.</BEWH.Abhuman.Reactor.SalvagersLetterText>
+    <BEWH.Abhuman.Reactor.TurretMachineSpiritRefuses>The wreck's machine spirit will not relinquish its guns.</BEWH.Abhuman.Reactor.TurretMachineSpiritRefuses>
 
 </LanguageData>

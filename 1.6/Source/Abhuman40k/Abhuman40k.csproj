@@ -100,6 +100,7 @@
     <Compile Include="Graphics\PawnRenderNode_FurSkin.cs" />
     <Compile Include="Harmony\HarmonyPatch_Gregarious.cs" />
     <Compile Include="Abhuman40kDefOf.cs" />
+    <Compile Include="Harmony\HarmonyPatch_NavigatorTurretClaim.cs" />
     <Compile Include="Harmony\HarmonyPatch_NavigatorTurretProvoked.cs" />
     <Compile Include="Harmony\HarmonyPatch_ToddlerLogicMentalStateHandler.cs" />
     <Compile Include="Harmony\HarmonyPatch_WarpEyeReveal.cs" />
