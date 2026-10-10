@@ -16,6 +16,9 @@ public class MapComponent_NavigatorRescue : MapComponent
     private bool triggered;
     private bool turretsAwake;
     private List<Thing> shipTurrets = new();
+    private List<Thing> shipSystems = new();
+    private readonly HashSet<Thing> excusedSystems = new();
+    private bool meltdownStarted;
     private bool lastSeenOnThisMap = true;
 
     public MapComponent_NavigatorRescue(Map map) : base(map)
@@ -42,6 +45,26 @@ public class MapComponent_NavigatorRescue : MapComponent
         {
             shipTurrets.Add(turret);
         }
+    }
+
+    /// <summary>
+    /// Records a generator, battery or other piece of the wreck whose destruction sets off the reactor.
+    /// </summary>
+    public void RegisterShipSystem(Thing system)
+    {
+        if (system != null && !shipSystems.Contains(system))
+        {
+            shipSystems.Add(system);
+        }
+    }
+
+    /// <summary>
+    /// Called by the reactor whenever it starts its countdown, whatever set it off.
+    /// </summary>
+    public void Notify_ReactorDestabilized()
+    {
+        meltdownStarted = true;
+        WakeTurrets();
     }
 
     public bool IsShipTurret(Thing turret)
@@ -72,12 +95,26 @@ public class MapComponent_NavigatorRescue : MapComponent
             SustainTurrets();
         }
 
+        if (!meltdownStarted && (ShipSystemLost(shipSystems) || ShipSystemLost(shipTurrets)))
+        {
+            meltdownStarted = true;
+            Building_CriticalReactor.DestabilizeAllOnMap(map);
+            WakeTurrets();
+        }
+
         if (navigator == null)
         {
             return;
         }
 
-        if (navigator.Dead || navigator.Destroyed)
+        if (navigator.Dead)
+        {
+            FailQuest();
+            navigator = null;
+            return;
+        }
+
+        if (navigator.Destroyed)
         {
             navigator = null;
             return;
@@ -117,8 +154,69 @@ public class MapComponent_NavigatorRescue : MapComponent
         {
             GameComponent_PersistentQuests.MarkCompleted(GameComponent_NavigatorQuest.NavigatorIncidentDefName);
         }
+        else if (navigator.Dead)
+        {
+            FailQuest();
+        }
 
         navigator = null;
+    }
+
+    /// <summary>
+    /// True once a registered ship system has been destroyed outright. Anything the player
+    /// deconstructs or uninstalls is excused, so dismantling the wreck does not set off the reactor.
+    /// </summary>
+    private bool ShipSystemLost(List<Thing> systems)
+    {
+        for (var i = 0; i < systems.Count; i++)
+        {
+            var system = systems[i];
+            if (system == null || excusedSystems.Contains(system))
+            {
+                continue;
+            }
+
+            if (system.Destroyed)
+            {
+                return true;
+            }
+
+            if (!system.Spawned || map.designationManager.DesignationOn(system, DesignationDefOf.Deconstruct) != null)
+            {
+                excusedSystems.Add(system);
+            }
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Ends the ongoing quest tied to this site as failed once the navigator is dead.
+    /// </summary>
+    private void FailQuest()
+    {
+        var site = map.Parent;
+        var quests = Find.QuestManager.QuestsListForReading;
+        for (var i = 0; i < quests.Count; i++)
+        {
+            var quest = quests[i];
+            if (quest.State != QuestState.Ongoing || quest.root != Abhuman40kDefOf.BEWH_NavigatorDowned)
+            {
+                continue;
+            }
+
+            if (!quest.PartsListForReading.Any(part => part is QuestPart_SpawnWorldObject spawn && spawn.worldObject == site))
+            {
+                continue;
+            }
+
+            var corpse = navigator.Corpse;
+            Find.LetterStack.ReceiveLetter("BEWH.Abhuman.NavigatorRescue.DiedLetterLabel".Translate(),
+                "BEWH.Abhuman.NavigatorRescue.DiedLetterText".Translate(navigator.Named("PAWN")),
+                LetterDefOf.NegativeEvent, corpse is { Spawned: true } ? corpse : null, quest: quest);
+            quest.End(QuestEndOutcome.Fail, sendLetter: false);
+            return;
+        }
     }
 
     private bool Rescued()
@@ -286,12 +384,16 @@ public class MapComponent_NavigatorRescue : MapComponent
         Scribe_Values.Look(ref triggered, "triggered");
         Scribe_Values.Look(ref turretsAwake, "turretsAwake");
         Scribe_Collections.Look(ref shipTurrets, "shipTurrets", LookMode.Reference);
+        Scribe_Collections.Look(ref shipSystems, "shipSystems", LookMode.Reference);
+        Scribe_Values.Look(ref meltdownStarted, "meltdownStarted");
         Scribe_Values.Look(ref lastSeenOnThisMap, "lastSeenOnThisMap", true);
 
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
         {
             shipTurrets ??= new List<Thing>();
             shipTurrets.RemoveAll(turret => turret == null);
+            shipSystems ??= new List<Thing>();
+            shipSystems.RemoveAll(system => system == null);
         }
     }
 }

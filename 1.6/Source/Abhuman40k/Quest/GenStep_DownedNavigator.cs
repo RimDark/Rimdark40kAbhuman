@@ -2,12 +2,16 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
+using UnityEngine;
 using Verse;
 
 namespace Abhuman40k;
 
 public class GenStep_DownedNavigator : GenStep_Scatterer
 {
+    private const float HullRadius = 45f;
+    private static readonly FloatRange HullHitPointsRange = new(0.35f, 0.65f);
+
     public override int SeedPart => 931842770;
 
     protected override bool CanScatterAt(IntVec3 c, Map map)
@@ -54,6 +58,69 @@ public class GenStep_DownedNavigator : GenStep_Scatterer
         SpawnTurrets(map, rescueComp);
         DisarmTurrets(map, rescueComp);
         DrainPodLaunchers(map);
+        BatterHull(map, RegisterShipSystems(map, rescueComp));
+    }
+
+    /// <summary>
+    /// Registers the wreck's generators and batteries, whose destruction sets off the reactor.
+    /// Returns those plus the turrets, as the parts that mark out the hull.
+    /// </summary>
+    private static List<Thing> RegisterShipSystems(Map map, MapComponent_NavigatorRescue rescueComp)
+    {
+        var parts = new List<Thing>();
+        foreach (var building in map.listerBuildings.allBuildingsNonColonist)
+        {
+            if (building is Building_TurretGun)
+            {
+                parts.Add(building);
+                continue;
+            }
+
+            if (building.TryGetComp<CompPowerPlant>() == null && building.TryGetComp<CompPowerBattery>() == null)
+            {
+                continue;
+            }
+
+            parts.Add(building);
+            rescueComp?.RegisterShipSystem(building);
+        }
+
+        return parts;
+    }
+
+    /// <summary>
+    /// Leaves the wreck's walls at reduced hit points so explosions inside it breach the hull.
+    /// </summary>
+    private static void BatterHull(Map map, List<Thing> shipParts)
+    {
+        if (shipParts.Count == 0)
+        {
+            return;
+        }
+
+        int x = 0, z = 0;
+        foreach (var part in shipParts)
+        {
+            x += part.Position.x;
+            z += part.Position.z;
+        }
+
+        var center = new IntVec3(x / shipParts.Count, 0, z / shipParts.Count);
+
+        foreach (var building in map.listerBuildings.allBuildingsNonColonist)
+        {
+            if (!building.def.IsWall || !building.def.useHitPoints || building.def.building.isNaturalRock)
+            {
+                continue;
+            }
+
+            if (!building.Position.InHorDistOf(center, HullRadius))
+            {
+                continue;
+            }
+
+            building.HitPoints = Mathf.Max(1, Mathf.RoundToInt(building.MaxHitPoints * HullHitPointsRange.RandomInRange));
+        }
     }
 
     private static void SpawnReactor(Map map)

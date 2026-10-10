@@ -54,9 +54,20 @@ public class Building_CriticalReactor : Building
 
         if (Spawned)
         {
+            Map.GetComponent<MapComponent_NavigatorRescue>()?.Notify_ReactorDestabilized();
             DirtyMapMesh(Map);
             Messages.Message("BEWH.Abhuman.Reactor.Destabilized".Translate(), this, MessageTypeDefOf.ThreatBig,
                 historical: false);
+        }
+    }
+
+    public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
+    {
+        base.PostApplyDamage(dinfo, totalDamageDealt);
+
+        if (Spawned && totalDamageDealt > 0f)
+        {
+            NotifyDestabilized();
         }
     }
 

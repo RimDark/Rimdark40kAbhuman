@@ -67,5 +67,7 @@
     <BEWH.Abhuman.Reactor.SalvagersLetterLabel>Salvagers inbound</BEWH.Abhuman.Reactor.SalvagersLetterLabel>
     <BEWH.Abhuman.Reactor.SalvagersLetterText>The gravship's death throes have not gone unnoticed. A band from {0} is closing on the wreck, and they are here for whatever they can strip out of it before it goes up.</BEWH.Abhuman.Reactor.SalvagersLetterText>
     <BEWH.Abhuman.Reactor.TurretMachineSpiritRefuses>The wreck's machine spirit will not relinquish its guns.</BEWH.Abhuman.Reactor.TurretMachineSpiritRefuses>
+    <BEWH.Abhuman.NavigatorRescue.DiedLetterLabel>Navigator lost</BEWH.Abhuman.NavigatorRescue.DiedLetterLabel>
+    <BEWH.Abhuman.NavigatorRescue.DiedLetterText>{PAWN_nameDef} has died at the crash site. Whatever secrets of the warp {PAWN_pronoun} carried are lost with {PAWN_objective}, and the rescue has failed.</BEWH.Abhuman.NavigatorRescue.DiedLetterText>
 
 </LanguageData>

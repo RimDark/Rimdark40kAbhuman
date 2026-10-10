@@ -89,7 +89,7 @@ public class Comp_CriticalReactor : ThingComp, IThingGlower
     {
         base.PostDestroy(mode, previousMap);
 
-        if (detonated || !Armed || mode != DestroyMode.KillFinalize)
+        if (detonated || mode != DestroyMode.KillFinalize)
         {
             return;
         }
