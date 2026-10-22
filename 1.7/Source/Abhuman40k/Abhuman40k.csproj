@@ -14,9 +14,9 @@
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <GenerateDependencyFile>false</GenerateDependencyFile>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-    <RimWorldDir>$(MSBuildProjectDirectory)\..\..\..\..\..</RimWorldDir>
-    <WorkshopDir>$(RimWorldDir)\..\..\workshop\content\294100</WorkshopDir>
-    <VEFDir>$(WorkshopDir)\2023507013\1.7\Assemblies</VEFDir>
+    <!-- Relative default assumes the mod sits in RimWorld\Mods; a Directory.Build.props above the repo can override it -->
+    <WorkshopDir Condition="'$(WorkshopDir)' == ''">$(MSBuildProjectDirectory)\..\..\..\..\..\..\..\workshop\content\294100\</WorkshopDir>
+    <VEFDir>$(WorkshopDir)2023507013\1.7\Assemblies</VEFDir>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
@@ -38,23 +38,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2009463077\1.7\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>$(RimWorldDir)\Assembly-CSharp.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="UnityStubs">
-      <HintPath>$(RimWorldDir)\UnityStubs.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="$(RimWorldDir)\Waylith.dll;$(RimWorldDir)\Waylith.*.dll;$(RimWorldDir)\Brutal.*.dll">
-      <Private>false</Private>
-    </Reference>
+    <!-- Krafs.Rimworld.Ref must match the game build in RimWorld\Version.txt; Lib.Harmony.Ref must match the Workshop Harmony 1.7 build -->
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4985-unstable" />
+    <PackageReference Include="Lib.Harmony.Ref" Version="3.0.0-rc.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Core40k">
-      <HintPath>$(RimWorldDir)\Mods\Rimdark40kFramework\1.7\Assemblies\Core40k.dll</HintPath>
+      <HintPath>..\..\..\..\Rimdark40kFramework\1.7\Assemblies\Core40k.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VEF">
