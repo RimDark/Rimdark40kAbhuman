@@ -143,7 +143,7 @@
     <GeneDef ParentName="BEWH_AbhumanGenesOverallParent">
         <defName>BEWH_NavigtorNavisNobilite</defName>
         <label>navis nobilite</label>
-        <description>Carriers of this gene are born into one of the noble navigator houses, inheriting its bloodline traits along with its expectations.</description>
+        <description>Carriers of this gene are born into one of the noble navigator houses, inheriting their bloodline traits and expectations.</description>
         <iconPath>UI/Genes/Navigator/BEWH_NavisNobilite</iconPath>
         <geneClass>Core40k.Gene_AddRandomGeneAndOrTraitByWeight</geneClass>
         <biostatCpx>1</biostatCpx>
@@ -151,7 +151,7 @@
         <displayOrderInCategory>65</displayOrderInCategory>
 
         <customEffectDescriptions>
-            <li>Belongs to a noble navigator house and expects to be treated as such</li>
+            <li>Belongs to a noble navigator house and expects to be treated as such.</li>
         </customEffectDescriptions>
 
         <modExtensions>

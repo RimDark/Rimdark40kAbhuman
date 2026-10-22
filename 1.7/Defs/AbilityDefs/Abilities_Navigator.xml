@@ -10,15 +10,15 @@
   <AbilityDef>
     <defName>BEWH_NavigatorExposeWarpEye</defName>
     <label>piercing gaze</label>
-    <description>The Navigator can open their third eye and gaze upon a victim. All but the strongest will perish when meeting their gaze.</description>
+    <description>The Navigator can open their third eye and delve into the mind of their victim, exposing them to the horrors of the Warp. Only a few are capable of withstanding this ordeal. The rest are doomed to an instant death.</description>
     <iconPath>UI/Abilities/BEWH_Ability_NavigatorPiercingGaze</iconPath>
     <cooldownTicksRange>900000</cooldownTicksRange>
     <aiCanUse>false</aiCanUse>
     <category>BEWH_Navigator</category>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
-      <range>10</range>
-      <warmupTime>0.5</warmupTime>
+      <range>7.5</range>
+      <warmupTime>4</warmupTime>
       <targetParams>
         <canTargetSelf>false</canTargetSelf>
         <canTargetPawns>true</canTargetPawns>
@@ -47,9 +47,9 @@
   <AbilityDef>
     <defName>BEWH_NavigatorHeldInGaze</defName>
     <label>held in my gaze</label>
-    <description>The Navigator fixes a victim with the warp eye and refuses to let go. So long as the Navigator stands still and keeps their gaze, the victim can neither move nor strike. The effort drains the Navigator's mind, and larger victims are harder to hold. If the Navigator holds on too long, they will collapse.</description>
-    <iconPath>UI/Abilities/BEWH_Ability_NavigatorPiercingGaze</iconPath>
-    <cooldownTicksRange>2500</cooldownTicksRange>
+    <description>The Navigator's gaze immobilizes the target, preventing it from moving or attacking for as long as the Navigator maintains their hold on it. This drains the Navigator's mental energy, and larger targets are more difficult to hold. If the Navigator holds on for too long, they risk losing passing out from exhaustion.</description>
+    <iconPath>UI/Abilities/BEWH_Ability_NavigatorHeldInMyGaze</iconPath>
+    <cooldownTicksRange>6000</cooldownTicksRange>
     <waitForJobEnd>true</waitForJobEnd>
     <jobDef>BEWH_HoldInGaze</jobDef>
     <aiCanUse>false</aiCanUse>
@@ -138,6 +138,7 @@
         <canTargetAnimals>false</canTargetAnimals>
         <canTargetMechs>false</canTargetMechs>
         <canTargetBloodfeeders>true</canTargetBloodfeeders>
+        <onlyTargetColonists>true</onlyTargetColonists>
       </targetParams>
     </verbProperties>
     <comps>

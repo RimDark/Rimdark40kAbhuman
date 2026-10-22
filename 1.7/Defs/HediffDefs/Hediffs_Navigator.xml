@@ -22,7 +22,7 @@
 
     <HediffDef>
         <defName>BEWH_NavigatorGazeStrain</defName>
-        <label>gaze strain</label>
+        <label>mental exhaustion</label>
         <description>The mental toll of pinning another being in place with the warp eye. It fades once the Navigator lets go, but holding on too long will leave them senseless.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <defaultLabelColor>(0.7, 0.5, 0.9)</defaultLabelColor>
@@ -37,7 +37,7 @@
         </comps>
         <stages>
             <li>
-                <label>strained</label>
+                <label>pressing</label>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
@@ -71,13 +71,13 @@
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
-                        <offset>-0.45</offset>
+                        <offset>-0.80</offset>
                     </li>
                 </capMods>
             </li>
             <li>
                 <minSeverity>1</minSeverity>
-                <label>lost in the gaze</label>
+                <label>collapsed</label>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
@@ -90,7 +90,7 @@
 
     <HediffDef>
         <defName>BEWH_HeldInGaze</defName>
-        <label>held in gaze</label>
+        <label>navigator's hold</label>
         <description>This creature is pinned in place by a Navigator's warp eye and can neither move nor act until the gaze breaks.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <defaultLabelColor>(0.7, 0.5, 0.9)</defaultLabelColor>

@@ -34,10 +34,10 @@
     <BEWH.Abhuman.Ogryn.MissingSlowWitted>{0} does not have gene {1}</BEWH.Abhuman.Ogryn.MissingSlowWitted>
 
     <!-- Navigator -->
-    <BEWH.Abhuman.Navigator.WillBeStunned>Will stun</BEWH.Abhuman.Navigator.WillBeStunned>
-    <BEWH.Abhuman.Navigator.WillBeHeld>Will hold</BEWH.Abhuman.Navigator.WillBeHeld>
+    <BEWH.Abhuman.Navigator.WillBeStunned>Target will be stunned</BEWH.Abhuman.Navigator.WillBeStunned>
+    <BEWH.Abhuman.Navigator.WillBeHeld>Target will be held</BEWH.Abhuman.Navigator.WillBeHeld>
     <BEWH.Abhuman.Navigator.HeldInGazeDeaf>{PAWN_labelShort} is psychically deaf and cannot be held.</BEWH.Abhuman.Navigator.HeldInGazeDeaf>
-    <BEWH.Abhuman.Navigator.WillBeKilled>Will kill</BEWH.Abhuman.Navigator.WillBeKilled>
+    <BEWH.Abhuman.Navigator.WillBeKilled>Target will die</BEWH.Abhuman.Navigator.WillBeKilled>
     <BEWH.Abhuman.Navigator.WarpTravelLetter>Warp Travel Concluded</BEWH.Abhuman.Navigator.WarpTravelLetter>
     <BEWH.Abhuman.Navigator.WarpTravelMessage>After spending {1} traveling in the Warp, navigator {0} has successfully teleported {2} to their desired location.</BEWH.Abhuman.Navigator.WarpTravelMessage>
     <BEWH.Abhuman.Navigator.TravelTimeRemaining>Time remaining between {0}~{1}</BEWH.Abhuman.Navigator.TravelTimeRemaining>
